@@ -1,6 +1,11 @@
 package com.example.swapseat.data;
 
 import com.example.swapseat.data.model.LoggedInUser;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -48,6 +53,7 @@ public class LoginRepository {
         // handle login
         Result<LoggedInUser> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
+
             setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
         }
         return result;

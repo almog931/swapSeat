@@ -14,7 +14,7 @@ public class LoggedInUser {
         this.userId = userId;
         this.displayName = displayName;
     }
-
+//////michal is fat
     public String getUserId() {
         return userId;
     }
